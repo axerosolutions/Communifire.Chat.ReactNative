@@ -29,6 +29,10 @@ build/
 .gradle
 local.properties
 *.iml
+**/fastlane/report.xml
+**/fastlane/Preview.html
+**/fastlane/screenshots
+**/fastlane/test_output
 
 # node.js
 #
