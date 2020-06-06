@@ -19,10 +19,10 @@ import { appStart as appStartAction } from '../actions';
 import sharedStyles from './Styles';
 import Button from '../containers/Button';
 import TextInput from '../containers/TextInput';
-import OrSeparator from '../containers/OrSeparator';
+// import OrSeparator from '../containers/OrSeparator';
 import FormContainer, { FormContainerInner } from '../containers/FormContainer';
 import I18n from '../i18n';
-import { isIOS } from '../utils/deviceInfo';
+// import { isIOS } from '../utils/deviceInfo';
 import { themes } from '../constants/colors';
 import log from '../utils/log';
 import { animateNextTransition } from '../utils/layoutAnimation';
@@ -53,12 +53,14 @@ const styles = StyleSheet.create({
 		fontSize: 13,
 		...sharedStyles.textSemibold
 	},
+	/*
 	description: {
 		...sharedStyles.textRegular,
 		fontSize: 14,
 		textAlign: 'left',
 		marginBottom: 24
 	},
+	*/
 	connectButton: {
 		marginBottom: 0
 	}
@@ -299,10 +301,10 @@ class NewServerView extends React.Component {
 		return (
 			<FormContainer theme={theme} testID='new-server-view'>
 				<FormContainerInner>
+					<View style={{ padding: 40 }} />
 					<Text style={[styles.title, { color: themes[theme].titleText }]}>{I18n.t('Join_your_workspace')}</Text>
 					<TextInput
 						label='Enter workspace URL'
-						placeholder='Ex. your-company.rocket.chat'
 						containerStyle={styles.inputContainer}
 						value={text}
 						returnKeyType='send'
@@ -324,6 +326,7 @@ class NewServerView extends React.Component {
 						theme={theme}
 						testID='new-server-view-button'
 					/>
+					{/*
 					<OrSeparator theme={theme} />
 					<Text style={[styles.description, { color: themes[theme].auxiliaryText }]}>{I18n.t('Onboarding_join_open_description')}</Text>
 					<Button
@@ -336,8 +339,11 @@ class NewServerView extends React.Component {
 						theme={theme}
 						testID='new-server-view-open'
 					/>
+					*/}
 				</FormContainerInner>
+				{/*
 				{ isIOS ? this.renderCertificatePicker() : null }
+				*/}
 			</FormContainer>
 		);
 	}

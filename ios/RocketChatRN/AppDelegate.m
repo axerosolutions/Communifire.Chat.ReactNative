@@ -51,7 +51,7 @@ static void InitializeFlipper(UIApplication *application) {
     RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
     [FIRApp configure];
     RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
-                                                moduleName:@"RocketChatRN"
+                                                moduleName:@"CommunifireRN"
                                                 initialProperties:nil];
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];

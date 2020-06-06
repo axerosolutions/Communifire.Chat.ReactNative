@@ -142,7 +142,8 @@ const handleServerRequest = function* handleServerRequest({ server, certificate 
 		if (serverInfo) {
 			yield RocketChat.getLoginServices(server);
 			yield RocketChat.getLoginSettings({ server });
-			Navigation.navigate('WorkspaceView');
+			// Navigation.navigate('WorkspaceView');
+			Navigation.navigate('LoginView');
 			yield put(selectServerRequest(server, serverInfo.version, false));
 		}
 	} catch (e) {
