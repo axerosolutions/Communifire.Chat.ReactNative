@@ -55,7 +55,7 @@ exports[`Storyshots Markdown list Markdown 1`] = `
         }
       >
         <Text
-          accessibilityLabel="This is Rocket.Chat"
+          accessibilityLabel="This is Communifire"
           style={
             Array [
               Object {
@@ -78,7 +78,7 @@ exports[`Storyshots Markdown list Markdown 1`] = `
             ]
           }
         >
-          This is Rocket.Chat
+          This is Communifire
         </Text>
       </Text>
     </View>

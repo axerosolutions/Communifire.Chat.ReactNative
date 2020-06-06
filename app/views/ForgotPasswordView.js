@@ -16,7 +16,7 @@ import FormContainer, { FormContainerInner } from '../containers/FormContainer';
 
 class ForgotPasswordView extends React.Component {
 	static navigationOptions = ({ navigation, screenProps }) => {
-		const title = navigation.getParam('title', 'Rocket.Chat');
+		const title = navigation.getParam('title', 'Communifire');
 		return {
 			title,
 			...themedHeader(screenProps.theme)

@@ -50,7 +50,7 @@ export default ({ theme }) => {
 		>
 			<StoriesSeparator style={styles.separator} title='Short Text' theme={theme} />
 			<View style={styles.container}>
-				<Markdown msg='This is Rocket.Chat' theme={theme} />
+				<Markdown msg='This is Communifire' theme={theme} />
 			</View>
 
 			<StoriesSeparator style={styles.separator} title='Long Text' theme={theme} />

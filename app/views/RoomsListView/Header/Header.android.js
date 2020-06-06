@@ -96,7 +96,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-	serverName: 'Rocket.Chat'
+	serverName: 'Communifire'
 };
 
 export default Header;

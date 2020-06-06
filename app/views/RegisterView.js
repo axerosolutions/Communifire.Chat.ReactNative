@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 
 class RegisterView extends React.Component {
 	static navigationOptions = ({ navigation, screenProps }) => {
-		const title = navigation.getParam('title', 'Rocket.Chat');
+		const title = navigation.getParam('title', 'Communifire');
 		return {
 			...themedHeader(screenProps.theme),
 			title,

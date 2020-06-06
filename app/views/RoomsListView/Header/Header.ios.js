@@ -77,7 +77,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-	serverName: 'Rocket.Chat'
+	serverName: 'Communifire'
 };
 
 HeaderTitle.propTypes = {
