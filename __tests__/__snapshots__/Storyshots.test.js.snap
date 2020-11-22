@@ -9686,7 +9686,7 @@ exports[`Storyshots Markdown list Markdown 1`] = `
         }
       >
         <Text
-          accessibilityLabel="This is Rocket.Chat"
+          accessibilityLabel="This is Communifire"
           style={
             Array [
               Object {
@@ -9709,7 +9709,7 @@ exports[`Storyshots Markdown list Markdown 1`] = `
             ]
           }
         >
-          This is Rocket.Chat
+          This is Communifire
         </Text>
       </Text>
     </View>
@@ -12256,7 +12256,7 @@ exports[`Storyshots Markdown list Markdown 1`] = `
             }
           >
             <Text
-              accessibilityLabel="Rocket.Chat"
+              accessibilityLabel="Communifire"
               style={
                 Array [
                   Object {
@@ -12281,7 +12281,7 @@ exports[`Storyshots Markdown list Markdown 1`] = `
                 ]
               }
             >
-              Rocket.Chat
+              Communifire
             </Text>
           </Text>
           <View
@@ -12605,7 +12605,7 @@ exports[`Storyshots Markdown list Markdown 1`] = `
             }
           >
             <Text
-              accessibilityLabel="Rocket.Chat"
+              accessibilityLabel="Communifire"
               style={
                 Array [
                   Object {
@@ -12630,7 +12630,7 @@ exports[`Storyshots Markdown list Markdown 1`] = `
                 ]
               }
             >
-              Rocket.Chat
+              Communifire
             </Text>
           </Text>
         </View>
@@ -37056,7 +37056,7 @@ exports[`Storyshots Message list message 1`] = `
                       ]
                     }
                   >
-                    Rocket.Chat - Free, Open Source, Enterprise Team Chat
+                    Communifire - Free, Open Source, Enterprise Team Chat
                   </Text>
                   <Text
                     numberOfLines={2}
@@ -37074,7 +37074,7 @@ exports[`Storyshots Message list message 1`] = `
                       ]
                     }
                   >
-                    Rocket.Chat is the leading open source team chat software solution. Free, unlimited and completely customizable with on-premises and SaaS cloud hosting.
+                    Communifire is the leading open source team chat software solution. Free, unlimited and completely customizable with on-premises and SaaS cloud hosting.
                   </Text>
                 </View>
               </View>

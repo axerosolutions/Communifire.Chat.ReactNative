@@ -50,7 +50,7 @@ export default ({ theme }) => {
 		>
 			<StoriesSeparator style={styles.separator} title='Short Text' theme={theme} />
 			<View style={styles.container}>
-				<Markdown msg='This is Rocket.Chat' theme={theme} />
+				<Markdown msg='This is Communifire' theme={theme} />
 			</View>
 
 			<StoriesSeparator style={styles.separator} title='Long Text' theme={theme} />
@@ -243,7 +243,7 @@ Code block
 			<StoriesSeparator style={styles.separator} title='Lists' theme={theme} />
 			<View style={styles.container}>
 				<Markdown
-					msg={'* Open Source\n* Rocket.Chat\n  - nodejs\n  - ReactNative'}
+					msg={'* Open Source\n* Communifire\n  - nodejs\n  - ReactNative'}
 					theme={theme}
 				/>
 			</View>
@@ -251,7 +251,7 @@ Code block
 			<StoriesSeparator style={styles.separator} title='Numbered Lists' theme={theme} />
 			<View style={styles.container}>
 				<Markdown
-					msg={'1. Open Source\n2. Rocket.Chat'}
+					msg={'1. Open Source\n2. Communifire'}
 					theme={theme}
 				/>
 			</View>

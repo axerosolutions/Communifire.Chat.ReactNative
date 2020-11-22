@@ -140,7 +140,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "chat.rocket.reactnative"
+        applicationId "com.axero.rocketchat"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode VERSIONCODE as Integer

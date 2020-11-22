@@ -9,7 +9,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Rocket.Chat Experimental</string>
+	<string>Communifire Experimental</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -115,6 +115,6 @@
 		<string>brave</string>
 	</array>
 	<key>AppGroup</key>
-	<string>group.ios.chat.rocket</string>
+	<string>group.com.axero.rocketchat</string>
 </dict>
 </plist>

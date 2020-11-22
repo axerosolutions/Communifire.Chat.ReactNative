@@ -659,8 +659,8 @@ export default ({ theme }) => {
 				urls={[{
 					url: 'https://rocket.chat',
 					image: 'https://rocket.chat/images/blog/post.jpg',
-					title: 'Rocket.Chat - Free, Open Source, Enterprise Team Chat',
-					description: 'Rocket.Chat is the leading open source team chat software solution. Free, unlimited and completely customizable with on-premises and SaaS cloud hosting.'
+					title: 'Communifire - Free, Open Source, Enterprise Team Chat',
+					description: 'Communifire is the leading open source team chat software solution. Free, unlimited and completely customizable with on-premises and SaaS cloud hosting.'
 				}, {
 					url: 'https://google.com',
 					title: 'Google',

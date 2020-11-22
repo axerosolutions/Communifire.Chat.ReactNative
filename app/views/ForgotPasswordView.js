@@ -16,7 +16,7 @@ import { logEvent, events } from '../utils/log';
 
 class ForgotPasswordView extends React.Component {
 	static navigationOptions = ({ route }) => ({
-		title: route.params?.title ?? 'Rocket.Chat'
+		title: route.params?.title ?? 'Communifire'
 	})
 
 	static propTypes = {
