@@ -61,6 +61,6 @@
 		<string>custom.ttf</string>
 	</array>
 	<key>AppGroup</key>
-	<string>group.jlm.chat.rocket</string>
+	<string>group.com.axero.rocketchat</string>
 </dict>
 </plist>

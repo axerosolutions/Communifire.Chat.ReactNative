@@ -27,7 +27,7 @@ import serversMigrations from './model/serversMigrations';
 
 import { isIOS } from '../../utils/deviceInfo';
 
-const appGroupPath = isIOS ? `${ RNFetchBlob.fs.syncPathAppGroup('group.jlm.chat.rocket') }/` : '';
+const appGroupPath = isIOS ? `${ RNFetchBlob.fs.syncPathAppGroup('group.com.axero.rocketchat') }/` : '';
 
 if (__DEV__ && isIOS) {
 	console.log(appGroupPath);
