@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>KeychainGroup</key>
-	<string>$(AppIdentifierPrefix)com.axero.rocketchat</string>
+	<string>$(AppIdentifierPrefix)com.rocket.reactnative</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -63,6 +63,6 @@
 		<string>custom.ttf</string>
 	</array>
 	<key>AppGroup</key>
-	<string>group.jlm.chat.rocket</string>
+	<string>group.ios.chat.rocket</string>
 </dict>
 </plist>

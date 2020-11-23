@@ -196,7 +196,7 @@ android {
     flavorDimensions "type"
     productFlavors {
         foss {
-            applicationId "com.axero.rocketchat"
+            applicationId "com.communifire.reactnative"
             dimension = "type"
             buildConfigField "boolean", "FDROID_BUILD", "true"
         }

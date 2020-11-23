@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-	Text, Keyboard, StyleSheet, View, Alert, BackHandler
+	Text, Keyboard, StyleSheet, Alert, BackHandler
 } from 'react-native';
 import { connect } from 'react-redux';
 import * as FileSystem from 'expo-file-system';
@@ -10,7 +10,6 @@ import { Base64 } from 'js-base64';
 import parse from 'url-parse';
 import { Q } from '@nozbe/watermelondb';
 
-import { TouchableOpacity } from 'react-native-gesture-handler';
 import UserPreferences from '../../lib/userPreferences';
 import EventEmitter from '../../utils/events';
 import { selectServerRequest, serverRequest } from '../../actions/server';
@@ -19,7 +18,6 @@ import sharedStyles from '../Styles';
 import Button from '../../containers/Button';
 import FormContainer, { FormContainerInner } from '../../containers/FormContainer';
 import I18n from '../../i18n';
-import { isIOS } from '../../utils/deviceInfo';
 import { themes } from '../../constants/colors';
 import log, { logEvent, events } from '../../utils/log';
 import { animateNextTransition } from '../../utils/layoutAnimation';
@@ -35,19 +33,6 @@ const styles = StyleSheet.create({
 	title: {
 		...sharedStyles.textBold,
 		fontSize: 22
-	},
-	certificatePicker: {
-		marginBottom: 32,
-		alignItems: 'center',
-		justifyContent: 'flex-end'
-	},
-	chooseCertificateTitle: {
-		fontSize: 13,
-		...sharedStyles.textRegular
-	},
-	chooseCertificate: {
-		fontSize: 13,
-		...sharedStyles.textSemibold
 	},
 	connectButton: {
 		marginBottom: 0
@@ -297,36 +282,6 @@ class NewServerView extends React.Component {
 		}
 	}
 
-	renderCertificatePicker = () => {
-		const { certificate } = this.state;
-		const { theme } = this.props;
-		return (
-			<View style={styles.certificatePicker}>
-				<Text
-					style={[
-						styles.chooseCertificateTitle,
-						{ color: themes[theme].auxiliaryText }
-					]}
-				>
-					{certificate ? I18n.t('Your_certificate') : I18n.t('Do_you_have_a_certificate')}
-				</Text>
-				<TouchableOpacity
-					onPress={certificate ? this.handleRemove : this.chooseCertificate}
-					testID='new-server-choose-certificate'
-				>
-					<Text
-						style={[
-							styles.chooseCertificate,
-							{ color: themes[theme].tintColor }
-						]}
-					>
-						{certificate ? certificate.name : I18n.t('Apply_Your_Certificate')}
-					</Text>
-				</TouchableOpacity>
-			</View>
-		);
-	}
-
 	render() {
 		const { connecting, theme } = this.props;
 		const {
@@ -360,7 +315,6 @@ class NewServerView extends React.Component {
 						testID='new-server-view-button'
 					/>
 				</FormContainerInner>
-				{isIOS ? this.renderCertificatePicker() : null}
 			</FormContainer>
 		);
 	}
