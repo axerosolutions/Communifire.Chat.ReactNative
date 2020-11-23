@@ -43,7 +43,7 @@ const ServerInput = ({
 		<View style={styles.container}>
 			<TextInput
 				label='Enter workspace URL'
-				placeholder='Ex. url.communifire.com'
+				placeholder='Ex. workspace.communifire.com'
 				containerStyle={styles.inputContainer}
 				value={text}
 				returnKeyType='send'
