@@ -43,7 +43,7 @@
     <resources>
         <image name="Launch Screen Icon" width="108" height="108"/>
         <namedColor name="splashBackgroundColor">
-            <color red="0.9882352941176471" green="0.30980392156862746" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96078431606292725" green="0.27058824896812439" blue="0.36078432202339172" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
