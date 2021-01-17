@@ -704,5 +704,10 @@ export default {
 	The_user_will_be_removed_from_s: 'The user will be removed from {{s}}',
 	Yes_remove_user: 'Yes, remove user!',
 	Direct_message: 'Direct message',
-	Message_Ignored: 'Message ignored. Tap to display it.'
+	Message_Ignored: 'Message ignored. Tap to display it.',
+	YourDomainPlaceHolder: 'yourname.communifire.com',
+	Next: 'Next',
+	Login_Form_Domain_Header: 'Login',
+	Login_Form_EnterDomain_Label: 'Enter your Communifire domain',
+	Login_Form_Domain_PlaceHolder: 'yourname.communifire.com',
 };

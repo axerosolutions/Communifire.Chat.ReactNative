@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-	Text, Keyboard, StyleSheet, View, BackHandler
+	Text, Image, Keyboard, StyleSheet, View, BackHandler, Dimensions 
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Base64 } from 'js-base64';
@@ -31,7 +31,16 @@ import { sanitizeLikeString } from '../../lib/database/utils';
 import SSLPinning from '../../utils/sslPinning';
 import RocketChat from '../../lib/rocketchat';
 
+const win = Dimensions.get('window');
+const ratio = win.width/3031; //541 is actual image width
+
 const styles = StyleSheet.create({
+	logolarge: {
+		width: win.width /2,
+		height: 598 * ratio/2, //362 is actual height of image
+		marginTop: 20,
+		marginBottom: 20
+	},
 	title: {
 		...sharedStyles.textBold,
 		fontSize: 22
@@ -62,8 +71,8 @@ const styles = StyleSheet.create({
 
 class NewServerView extends React.Component {
 	static navigationOptions = () => ({
-		title: I18n.t('Workspaces')
-	})
+		title: I18n.t('Login_Form_Domain_Header')
+	}) 
 
 	static propTypes = {
 		navigation: PropTypes.object,
@@ -321,7 +330,8 @@ class NewServerView extends React.Component {
 				keyboardShouldPersistTaps='never'
 			>
 				<FormContainerInner>
-					<Text style={[styles.title, { color: themes[theme].titleText }]}>{I18n.t('Join_your_workspace')}</Text>
+					{/* <Text style={[styles.title, { color: themes[theme].titleText }]}>{I18n.t('Join_your_workspace')}</Text> */}
+					<Image style={styles.logolarge} source={require('../../static/images/logo-login.png')} />
 					<ServerInput
 						text={text}
 						theme={theme}
@@ -332,7 +342,7 @@ class NewServerView extends React.Component {
 						onPressServerHistory={this.onPressServerHistory}
 					/>
 					<Button
-						title={I18n.t('Connect')}
+						title={I18n.t('Next')}
 						type='primary'
 						onPress={this.submit}
 						disabled={!text || connecting}
@@ -341,7 +351,7 @@ class NewServerView extends React.Component {
 						theme={theme}
 						testID='new-server-view-button'
 					/>
-					<OrSeparator theme={theme} />
+					{/* <OrSeparator theme={theme} />
 					<Text style={[styles.description, { color: themes[theme].auxiliaryText }]}>{I18n.t('Onboarding_join_open_description')}</Text>
 					<Button
 						title={I18n.t('Join_our_open_workspace')}
@@ -352,9 +362,9 @@ class NewServerView extends React.Component {
 						loading={connectingOpen && connecting}
 						theme={theme}
 						testID='new-server-view-open'
-					/>
+					/> */}
 				</FormContainerInner>
-				{this.renderCertificatePicker()}
+				{/* {this.renderCertificatePicker()} */}
 			</FormContainer>
 		);
 	}

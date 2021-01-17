@@ -6,6 +6,7 @@ import TextInput from '../../../containers/TextInput';
 import * as List from '../../../containers/List';
 import { themes } from '../../../constants/colors';
 import Item from './Item';
+import I18n from '../../../i18n';
 
 const styles = StyleSheet.create({
 	container: {
@@ -42,8 +43,8 @@ const ServerInput = ({
 	return (
 		<View style={styles.container}>
 			<TextInput
-				label='Enter workspace URL'
-				placeholder='Ex. workspace.communifire.com'
+				label={I18n.t('Login_Form_EnterDomain_Label')}
+				placeholder={I18n.t('Login_Form_Domain_PlaceHolder')}
 				containerStyle={styles.inputContainer}
 				value={text}
 				returnKeyType='send'
