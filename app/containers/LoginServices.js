@@ -307,6 +307,8 @@ class LoginServices extends React.PureComponent {
 				break;
 			}
 			case 'oauth_custom': {
+				// Instantly hit the OAuth button instead of loading the page.
+				this.onPressCustomOAuth(service);
 				onPress = () => this.onPressCustomOAuth(service);
 				break;
 			}
@@ -372,14 +374,14 @@ class LoginServices extends React.PureComponent {
 					<Animated.View style={style}>
 						{Object.values(services).map(service => this.renderItem(service))}
 					</Animated.View>
-					{this.renderServicesSeparator()}
+					{/* {this.renderServicesSeparator()} */}
 				</>
 			);
 		}
 		return (
 			<>
 				{Object.values(services).map(service => this.renderItem(service))}
-				{this.renderServicesSeparator()}
+				{/* {this.renderServicesSeparator()} */}
 			</>
 		);
 	}

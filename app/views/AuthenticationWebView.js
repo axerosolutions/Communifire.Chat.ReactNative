@@ -186,7 +186,7 @@ AuthenticationWebView.navigationOptions = ({ route, navigation }) => {
 	const { authType } = route.params;
 	return {
 		headerLeft: () => <HeaderButton.CloseModal navigation={navigation} />,
-		title: ['saml', 'cas', 'iframe'].includes(authType) ? 'SSO' : 'OAuth'
+		title: ['saml', 'cas', 'iframe'].includes(authType) ? 'SSO' : 'Login'
 	};
 };
 
