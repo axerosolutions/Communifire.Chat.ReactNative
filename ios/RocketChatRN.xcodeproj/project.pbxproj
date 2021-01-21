@@ -213,7 +213,7 @@
 		037C33B0D9A54FB4CB670FB7 /* Pods-ShareRocketChatRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareRocketChatRN.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShareRocketChatRN/Pods-ShareRocketChatRN.release.xcconfig"; sourceTree = "<group>"; };
 		0383633C4523666C176CAA52 /* Pods-ShareRocketChatRN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShareRocketChatRN.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShareRocketChatRN/Pods-ShareRocketChatRN.debug.xcconfig"; sourceTree = "<group>"; };
 		06BB44DD4855498082A744AD /* libz.tbd */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		13B07F961A680F5B00A75B9A /* Rocket.Chat Experimental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rocket.Chat Experimental.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07F961A680F5B00A75B9A /* Rocket.Chat Experimental.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "Rocket.Chat Experimental.app"; path = "Communifire Chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RocketChatRN/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = RocketChatRN/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RocketChatRN/Images.xcassets; sourceTree = "<group>"; };
@@ -1608,7 +1608,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/rn-extensions-share/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
-					"$PODS_CONFIGURATION_BUILD_DIR/Firebase",
+					$PODS_CONFIGURATION_BUILD_DIR/Firebase,
 				);
 				INFOPLIST_FILE = ShareRocketChatRN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1674,7 +1674,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/rn-extensions-share/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
-					"$PODS_CONFIGURATION_BUILD_DIR/Firebase",
+					$PODS_CONFIGURATION_BUILD_DIR/Firebase,
 				);
 				INFOPLIST_FILE = ShareRocketChatRN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
