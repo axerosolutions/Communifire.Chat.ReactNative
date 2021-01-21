@@ -12,10 +12,11 @@
 	<array>
 		<string>applinks:go.rocket.chat</string>
 		<string>applinks:jitsi.rocket.chat</string>
+		<string>webcredentials:example.com</string>
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.ios.chat.rocket</string>
+		<string>group.com.axero.rocketchat</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
