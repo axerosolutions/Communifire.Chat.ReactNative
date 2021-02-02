@@ -451,17 +451,17 @@ class ProfileView extends React.Component {
 
 	render() {
 		const {
-			name, username, email, newPassword, avatarUrl, customFields, avatar, saving
+			name, username, email, /* newPassword, avatarUrl, customFields, */ avatar, saving
 		} = this.state;
 		const {
 			user,
 			theme,
 			Accounts_AllowEmailChange,
-			Accounts_AllowPasswordChange,
+			// Accounts_AllowPasswordChange,
 			Accounts_AllowRealNameChange,
-			Accounts_AllowUserAvatarChange,
-			Accounts_AllowUsernameChange,
-			Accounts_CustomFields
+			// Accounts_AllowUserAvatarChange,
+			Accounts_AllowUsernameChange
+			// Accounts_CustomFields
 		} = this.props;
 
 		return (
@@ -527,7 +527,7 @@ class ProfileView extends React.Component {
 							testID='profile-view-email'
 							theme={theme}
 						/>
-						<RCTextInput
+						{/* <RCTextInput
 							editable={Accounts_AllowPasswordChange}
 							inputStyle={[
 								!Accounts_AllowPasswordChange && styles.disabled
@@ -546,9 +546,9 @@ class ProfileView extends React.Component {
 							secureTextEntry
 							testID='profile-view-new-password'
 							theme={theme}
-						/>
+						/> */}
 						{this.renderCustomFields()}
-						<RCTextInput
+						{/* <RCTextInput
 							editable={Accounts_AllowUserAvatarChange}
 							inputStyle={[
 								!Accounts_AllowUserAvatarChange && styles.disabled
@@ -562,7 +562,7 @@ class ProfileView extends React.Component {
 							testID='profile-view-avatar-url'
 							theme={theme}
 						/>
-						{this.renderAvatarButtons()}
+						{this.renderAvatarButtons()} */}
 						<Button
 							title={I18n.t('Save_Changes')}
 							type='primary'
