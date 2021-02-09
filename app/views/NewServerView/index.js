@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-	Text, Image, Keyboard, StyleSheet, View, BackHandler, Dimensions 
+	Text, Image, Keyboard, StyleSheet, View, BackHandler, Dimensions
 } from 'react-native';
 import { connect } from 'react-redux';
 import { Base64 } from 'js-base64';
@@ -15,7 +15,7 @@ import { selectServerRequest, serverRequest } from '../../actions/server';
 import { inviteLinksClear as inviteLinksClearAction } from '../../actions/inviteLinks';
 import sharedStyles from '../Styles';
 import Button from '../../containers/Button';
-import OrSeparator from '../../containers/OrSeparator';
+// import OrSeparator from '../../containers/OrSeparator';
 import FormContainer, { FormContainerInner } from '../../containers/FormContainer';
 import I18n from '../../i18n';
 import { themes } from '../../constants/colors';
@@ -32,19 +32,19 @@ import SSLPinning from '../../utils/sslPinning';
 import RocketChat from '../../lib/rocketchat';
 
 const win = Dimensions.get('window');
-const ratio = win.width/3031; //541 is actual image width
+const ratio = win.width / 3031; 		// 541 is actual image width
 
 const styles = StyleSheet.create({
 	logolarge: {
-		width: win.width /2,
-		height: 598 * ratio/2, //362 is actual height of image
+		width: win.width / 2,
+		height: (598 * ratio) / 2, 		// 362 is actual height of image
 		marginTop: 20,
 		marginBottom: 20
 	},
-	title: {
-		...sharedStyles.textBold,
-		fontSize: 22
-	},
+	// title: {
+	// 	...sharedStyles.textBold,
+	// 	fontSize: 22
+	// },
 	certificatePicker: {
 		marginBottom: 32,
 		alignItems: 'center',
@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
 		fontSize: 13,
 		...sharedStyles.textSemibold
 	},
-	description: {
-		...sharedStyles.textRegular,
-		fontSize: 14,
-		textAlign: 'left',
-		marginBottom: 24
-	},
+	// description: {
+	// 	...sharedStyles.textRegular,
+	// 	fontSize: 14,
+	// 	textAlign: 'left',
+	// 	marginBottom: 24
+	// },
 	connectButton: {
 		marginBottom: 0
 	}
@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
 class NewServerView extends React.Component {
 	static navigationOptions = () => ({
 		title: I18n.t('Login_Form_Domain_Header')
-	}) 
+	})
 
 	static propTypes = {
 		navigation: PropTypes.object,

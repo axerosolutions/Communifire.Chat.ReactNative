@@ -205,7 +205,7 @@ class LoginView extends React.Component {
 		return (
 			// OAuth button should be clicked to take the user to OAuth page
 			// No need to show the form
-			<FormContainer theme={theme} testID='login-view' >
+			<FormContainer theme={theme} testID='login-view'>
 				<FormContainerInner>
 					<LoginServices separator={Accounts_ShowFormLogin} navigation={navigation} />
 					{/* {this.renderUserForm()} */}
