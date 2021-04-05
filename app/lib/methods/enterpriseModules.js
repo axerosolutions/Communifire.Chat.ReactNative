@@ -1,4 +1,5 @@
-import semver from 'semver';
+import gte from 'semver/functions/gte';
+import coerce from 'semver/functions/coerce';
 
 import reduxStore from '../createStore';
 import database from '../database';
@@ -12,7 +13,7 @@ export async function setEnterpriseModules() {
 	try {
 		const { server: serverId } = reduxStore.getState().server;
 		const serversDB = database.servers;
-		const serversCollection = serversDB.collections.get('servers');
+		const serversCollection = serversDB.get('servers');
 		let server;
 		try {
 			server = await serversCollection.find(serverId);
@@ -33,12 +34,12 @@ export function getEnterpriseModules() {
 	return new Promise(async(resolve) => {
 		try {
 			const { version: serverVersion, server: serverId } = reduxStore.getState().server;
-			if (serverVersion && semver.gte(semver.coerce(serverVersion), '3.1.0')) {
+			if (serverVersion && gte(coerce(serverVersion), '3.1.0')) {
 				// RC 3.1.0
 				const enterpriseModules = await this.methodCallWrapper('license:getModules');
 				if (enterpriseModules) {
 					const serversDB = database.servers;
-					const serversCollection = serversDB.collections.get('servers');
+					const serversCollection = serversDB.get('servers');
 					const server = await serversCollection.find(serverId);
 					await serversDB.action(async() => {
 						await server.update((s) => {

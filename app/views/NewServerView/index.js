@@ -141,7 +141,7 @@ class NewServerView extends React.Component {
 	queryServerHistory = async(text) => {
 		const db = database.servers;
 		try {
-			const serversHistoryCollection = db.collections.get('servers_history');
+			const serversHistoryCollection = db.get('servers_history');
 			let whereClause = [
 				Q.where('username', Q.notEq(null)),
 				Q.experimentalSortBy('updated_at', Q.desc),
@@ -183,7 +183,7 @@ class NewServerView extends React.Component {
 	}
 
 	submit = async({ fromServerHistory = false, username }) => {
-		logEvent(events.NEWSERVER_CONNECT_TO_WORKSPACE);
+		logEvent(events.NS_CONNECT_TO_WORKSPACE);
 		const { text, certificate } = this.state;
 		const { connectServer } = this.props;
 
@@ -208,7 +208,7 @@ class NewServerView extends React.Component {
 	}
 
 	connectOpen = () => {
-		logEvent(events.NEWSERVER_JOIN_OPEN_WORKSPACE);
+		logEvent(events.NS_JOIN_OPEN_WORKSPACE);
 		this.setState({ connectingOpen: true });
 		const { connectServer } = this.props;
 		connectServer('https://open.rocket.chat');
