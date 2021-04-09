@@ -43,7 +43,7 @@ class UserNotificationPreferencesView extends React.Component {
 		};
 	}
 
-	async componentDidMount() {
+	async componentWillMount() {
 		const { user } = this.props;
 		const { id } = user;
 		const result = await RocketChat.getUserPreferences(id);
