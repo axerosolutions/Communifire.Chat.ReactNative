@@ -80,6 +80,7 @@ class ProfileView extends React.Component {
 			this.setState({ avatarSuggestions: result });
 		} catch (e) {
 			log(e);
+			console.log(this.state?.saving);
 		}
 	}
 
@@ -442,18 +443,22 @@ class ProfileView extends React.Component {
 
 	render() {
 		const {
-			name, username, email, /* newPassword, avatarUrl, customFields, */ avatar, saving
+			name, username, email, /* newPassword, avatarUrl, customFields, */ avatar /* ,saving */
 		} = this.state;
 		const {
 			user,
-			theme,
-			Accounts_AllowEmailChange,
+			theme
+			// Accounts_AllowEmailChange,
 			// Accounts_AllowPasswordChange,
-			Accounts_AllowRealNameChange,
+			// Accounts_AllowRealNameChange,
 			// Accounts_AllowUserAvatarChange,
-			Accounts_AllowUsernameChange
+			// Accounts_AllowUsernameChange
 			// Accounts_CustomFields
 		} = this.props;
+
+		const Accounts_AllowRealNameChange = false;
+		const Accounts_AllowUsernameChange = false;
+		const Accounts_AllowEmailChange = false;
 
 		return (
 			<KeyboardView
@@ -554,7 +559,7 @@ class ProfileView extends React.Component {
 							theme={theme}
 						/>
 						{this.renderAvatarButtons()} */}
-						<Button
+						{/* <Button
 							title={I18n.t('Save_Changes')}
 							type='primary'
 							onPress={this.submit}
@@ -562,7 +567,7 @@ class ProfileView extends React.Component {
 							testID='profile-view-submit'
 							loading={saving}
 							theme={theme}
-						/>
+						/> */}
 						<Button
 							title={I18n.t('Logout_from_other_logged_in_locations')}
 							type='secondary'

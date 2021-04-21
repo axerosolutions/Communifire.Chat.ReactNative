@@ -43,12 +43,16 @@ class UserNotificationPreferencesView extends React.Component {
 		};
 	}
 
-	async componentWillMount() {
-		const { user } = this.props;
-		const { id } = user;
-		const result = await RocketChat.getUserPreferences(id);
-		const { preferences } = result;
-		this.setState({ preferences, loading: true });
+	async componentDidMount() {
+		try {
+			const { user } = this.props;
+			const { id } = user;
+			const result = await RocketChat.getUserPreferences(id);
+			const { preferences } = result;
+			this.setState({ preferences, loading: true });
+		} catch (error) {
+			this.setState({ preferences: {}, loading: true });
+		}
 	}
 
 	findDefaultOption = (key) => {
