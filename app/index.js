@@ -42,7 +42,7 @@ RNScreens.enableScreens();
 
 const parseDeepLinking = (url) => {
 	if (url) {
-		url = url.replace(/rocketchat:\/\/|https:\/\/go.rocket.chat\//, '');
+		url = url.replace(/wefire:\/\/|https:\/\/go.communifire.com\//, '');
 		const regex = /^(room|auth|invite)\?/;
 		if (url.match(regex)) {
 			url = url.replace(regex, '').trim();
@@ -50,7 +50,7 @@ const parseDeepLinking = (url) => {
 				return parseQuery(url);
 			}
 		}
-		const call = /^(https:\/\/)?jitsi.rocket.chat\//;
+		const call = /^(https:\/\/)?meet.communifire.com\//;
 		if (url.match(call)) {
 			url = url.replace(call, '').trim();
 			if (url) {

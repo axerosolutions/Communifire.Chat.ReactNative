@@ -41,20 +41,20 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="go.rocket.chat"
+                    android:host="go.communifire.com"
                     android:scheme="https" />
                 <data
-                    android:host="jitsi.rocket.chat"
+                    android:host="meet.communifire.com"
                     android:scheme="https" />
                 <data
                     android:host="room"
-                    android:scheme="rocketchat" />
+                    android:scheme="wefire" />
                 <data
                     android:host="auth"
-                    android:scheme="rocketchat" />
+                    android:scheme="wefire" />
                 <data
-                    android:host="jitsi.rocket.chat"
-                    android:scheme="rocketchat" />
+                    android:host="meet.communifire.com"
+                    android:scheme="wefire" />
             </intent-filter>
         </activity>
         <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
