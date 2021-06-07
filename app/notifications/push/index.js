@@ -25,7 +25,10 @@ export const onNotification = (notification) => {
 					host,
 					rid,
 					path: `${ types[type] }/${ roomName }`,
+					// isCall: messageType === 'jitsi_call_started'
 					isCall: messageType === 'jitsi_call_started'
+							|| messageType === 'jitsi_comm_call_ring'
+							|| messageType === 'jitsi_comm_call_started'
 				};
 				store.dispatch(deepLinkingOpen(params));
 			} catch (e) {

@@ -449,6 +449,18 @@ const RocketChat = {
 		return this.post('video-conference/jitsi.update-timeout', { roomId });
 	},
 
+	cfJitsiStartCall(roomId) {
+		return this.post('video-conference/jitsi.comm-start-call', { roomId });
+	},
+
+	cfJitsiCloseCall(roomId, isHost) {
+		return this.post('video-conference/jitsi.comm-close-call', { roomId, isHost });
+	},
+
+	cfJitsiAcceptCall(roomId) {
+		return this.post('video-conference/jitsi.comm-accept-call', { roomId });
+	},
+
 	register(credentials) {
 		// RC 0.50.0
 		return this.post('users.register', credentials, false);

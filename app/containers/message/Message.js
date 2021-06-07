@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
 import MessageContext from './Context';
@@ -19,8 +19,10 @@ import Discussion from './Discussion';
 import Content from './Content';
 import ReadReceipt from './ReadReceipt';
 import CallButton from './CallButton';
+import PersonalCallButtons from './PersonalCallButtons';
 
 const MessageInner = React.memo((props) => {
+	// return <><Text>Hello {props.type}</Text></>;
 	if (props.type === 'discussion-created') {
 		return (
 			<>
@@ -29,7 +31,16 @@ const MessageInner = React.memo((props) => {
 			</>
 		);
 	}
-	if (props.type === 'jitsi_call_started') {
+	if (props.type === 'jitsi_comm_call_ring') {
+		return (
+			<>
+				<User {...props} />
+				<Content {...props} isInfo />
+				{/* <PersonalCallButtons {...props} /> */}
+			</>
+		);
+	}
+	if (props.type === 'jitsi_comm_call_started') {
 		return (
 			<>
 				<User {...props} />
@@ -38,6 +49,34 @@ const MessageInner = React.memo((props) => {
 			</>
 		);
 	}
+	if (props.type === 'jitsi_comm_call_started') {
+		return (
+			<>
+				<User {...props} />
+				<Content {...props} isInfo />
+				<CallButton {...props} />
+			</>
+		);
+	}
+
+	if (props.type === 'jitsi_comm_call_ended') {
+		return (
+			<>
+				<User {...props} />
+				<Content {...props} isInfo />
+			</>
+		);
+	}
+
+	if (props.type === 'jitsi_comm_call_canceled') {
+		return (
+			<>
+				<User {...props} />
+				<Content {...props} isInfo />
+			</>
+		);
+	}
+
 	if (props.blocks && props.blocks.length) {
 		return (
 			<>

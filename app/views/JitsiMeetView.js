@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import JitsiMeet, { JitsiMeetView as RNJitsiMeetView } from 'react-native-jitsi-meet';
 import BackgroundTimer from 'react-native-background-timer';
 import { connect } from 'react-redux';
+import EventEmitter from '../utils/events';
 
 import RocketChat from '../lib/rocketchat';
+import Navigation from '../lib/Navigation';
 import { getUserSelector } from '../selectors/login';
 
 import sharedStyles from './Styles';
@@ -33,6 +35,16 @@ class JitsiMeetView extends React.Component {
 		this.onConferenceTerminated = this.onConferenceTerminated.bind(this);
 		this.onConferenceJoined = this.onConferenceJoined.bind(this);
 		this.jitsiTimeout = null;
+		this.isHost = null;
+
+		this.onCallCancelledListener = EventEmitter.addEventListener('cf_jitsi_cancel_call',
+			() => {
+				if (this.jitsiTimeout) {
+					BackgroundTimer.clearInterval(this.jitsiTimeout);
+				}
+				JitsiMeet.endCall();
+				Navigation.back();
+			});
 	}
 
 	componentDidMount() {
@@ -65,12 +77,16 @@ class JitsiMeetView extends React.Component {
 			BackgroundTimer.clearInterval(this.jitsiTimeout);
 		}
 		JitsiMeet.endCall();
+		EventEmitter.removeListener('cf_jitsi_cancel_call', this.onCallCancelledListener);
 	}
 
 	// Jitsi Update Timeout needs to be called every 10 seconds to make sure
 	// call is not ended and is available to web users.
 	onConferenceJoined = () => {
 		logEvent(events.JM_CONFERENCE_JOIN);
+		RocketChat.cfJitsiStartCall(this.rid)
+			.then(res => this.isHost = res.isHost)
+			.catch(e => console.log(e));
 		RocketChat.updateJitsiTimeout(this.rid).catch(e => console.log(e));
 		if (this.jitsiTimeout) {
 			BackgroundTimer.clearInterval(this.jitsiTimeout);
@@ -82,6 +98,9 @@ class JitsiMeetView extends React.Component {
 
 	onConferenceTerminated = () => {
 		logEvent(events.JM_CONFERENCE_TERMINATE);
+		// <<<
+		// TODO: isHost?
+		RocketChat.cfJitsiCloseCall(this.rid, this.isHost).catch(e => console.log(e));
 		const { navigation } = this.props;
 		if (this.jitsiTimeout) {
 			BackgroundTimer.clearInterval(this.jitsiTimeout);

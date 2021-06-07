@@ -10,6 +10,8 @@ import { inviteLinksSetToken, inviteLinksRequest } from '../actions/inviteLinks'
 import database from '../lib/database';
 import RocketChat from '../lib/rocketchat';
 import EventEmitter from '../utils/events';
+import { showErrorAlert } from '../utils/info';
+import I18n from '../i18n';
 import {
 	appStart, ROOT_INSIDE, ROOT_NEW_SERVER, appInit
 } from '../actions/app';
@@ -75,6 +77,14 @@ const navigate = function* navigate({ params }) {
 				}
 
 				if (params.isCall) {
+					const remoteRoom = yield RocketChat.getRoom(room.id);
+
+					const { jitsiTimeout } = remoteRoom;
+					if (jitsiTimeout < Date.now()) {
+						showErrorAlert(I18n.t('Call_already_ended'));
+					} else {
+						RocketChat.callJitsi(room);
+					}
 					RocketChat.callJitsi(item);
 				}
 			}

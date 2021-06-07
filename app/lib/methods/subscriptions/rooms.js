@@ -1,5 +1,5 @@
 import { sanitizedRaw } from '@nozbe/watermelondb/RawRecord';
-import { InteractionManager } from 'react-native';
+import { InteractionManager, Alert } from 'react-native';
 
 import database from '../../database';
 import { merge } from '../helpers/mergeSubscriptionsRooms';
@@ -18,6 +18,7 @@ import { setUser } from '../../../actions/login';
 import { INAPP_NOTIFICATION_EMITTER } from '../../../containers/InAppNotification';
 import { Encryption } from '../../encryption';
 import { E2E_MESSAGE_TYPE } from '../../encryption/constants';
+import I18n from '../../../i18n';
 
 const removeListener = listener => listener.stop();
 
@@ -269,6 +270,44 @@ export default function subscribeRooms() {
 		}
 		const [type, data] = ddpMessage.fields.args;
 		const [, ev] = ddpMessage.fields.eventName.split('/');
+
+		if (ev === 'webrtc') {
+			const [action] = ddpMessage.fields.args;
+			// <<<
+			if (action === 'cf_jitsi_cancel_call') {
+				EventEmitter.emit('cf_jitsi_cancel_call', ddpMessage.fields.args);
+			}
+
+			if (action === 'cf_jitsi_ring_start') {
+				const rid = ddpMessage.fields.args[1];
+				const callerUsername = ddpMessage.fields.args[3];
+
+				const rejectJitsi = () => {
+					RocketChat.cfJitsiCloseCall(rid, true).catch(e => console.log(e));
+				};
+				const acceptJitsi = async() => {
+					const room = await RocketChat.getRoom(rid);
+					const { jitsiTimeout } = room;
+					if (jitsiTimeout < Date.now()) {
+						return;
+					} 
+					RocketChat.cfJitsiAcceptCall(rid, true).catch(e => console.log(e));
+					RocketChat.callJitsi(room);
+				};
+
+				Alert.alert(
+					I18n.t('CF_incoming_call'),
+					I18n.t('CF_is_calling', { userBy: callerUsername }),
+					[
+						{ text: I18n.t('CF_accept_call'), onPress: acceptJitsi },
+						{ text: I18n.t('CF_refuse_call'), onPress: rejectJitsi, style: 'cancel' }
+					],
+					{ cancelable: false }
+				);
+			}
+		}
+
+
 		if (/userData/.test(ev)) {
 			const [{ diff }] = ddpMessage.fields.args;
 			if (diff?.statusLivechat) {

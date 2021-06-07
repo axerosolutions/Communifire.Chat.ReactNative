@@ -22,6 +22,16 @@ const formatMsg = ({
 		return I18n.t('Started_call', { userBy: u.username });
 	}
 
+	if (lastMessage.t === 'jitsi_comm_call_ring') {
+		return I18n.t('CF_is_calling', { userBy: lastMessage.u.username });
+	} else if (lastMessage.t === 'jitsi_comm_call_started') {
+		return I18n.t('CF_started_call', { userBy: lastMessage.u.username });
+	} else if (lastMessage.t === 'jitsi_comm_call_ended') {
+		return I18n.t('CF_ended_call', { userBy: lastMessage.u.username });
+	} else if (lastMessage.t === 'jitsi_comm_call_canceled') {
+		return I18n.t('CF_missed_call', { userBy: lastMessage.u.username });
+	}
+
 	let prefix = '';
 	const isLastMessageSentByMe = lastMessage.u.username === username;
 
