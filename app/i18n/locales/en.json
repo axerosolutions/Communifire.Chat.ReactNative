@@ -709,5 +709,9 @@
   "This_room_encryption_has_been_disabled_by__username_": "This room's encryption has been disabled by {{username}}",
   "Teams": "Teams",
   "No_team_channels_found": "No channels found",
-  "Team_not_found": "Team not found"
+  "Team_not_found": "Team not found",
+  "YourDomainPlaceHolder": "yourname.communifire.com",
+	"Login_Form_Domain_Header": "Login",
+	"Login_Form_EnterDomain_Label": "Enter your Communifire domain",
+	"Login_Form_Domain_PlaceHolder": "yourname.communifire.com"
 }
