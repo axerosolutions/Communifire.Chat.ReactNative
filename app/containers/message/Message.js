@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import Touchable from 'react-native-platform-touchable';
 
 import MessageContext from './Context';
@@ -19,7 +19,7 @@ import Discussion from './Discussion';
 import Content from './Content';
 import ReadReceipt from './ReadReceipt';
 import CallButton from './CallButton';
-import PersonalCallButtons from './PersonalCallButtons';
+// import PersonalCallButtons from './PersonalCallButtons';
 
 const MessageInner = React.memo((props) => {
 	// return <><Text>Hello {props.type}</Text></>;

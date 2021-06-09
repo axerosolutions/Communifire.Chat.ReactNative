@@ -290,7 +290,7 @@ export default function subscribeRooms() {
 					const { jitsiTimeout } = room;
 					if (jitsiTimeout < Date.now()) {
 						return;
-					} 
+					}
 					RocketChat.cfJitsiAcceptCall(rid, true).catch(e => console.log(e));
 					RocketChat.callJitsi(room);
 				};
