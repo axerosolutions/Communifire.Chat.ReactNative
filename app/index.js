@@ -42,7 +42,7 @@ RNScreens.enableScreens();
 
 const parseDeepLinking = (url) => {
 	if (url) {
-		url = url.replace(/wefire:\/\/|https:\/\/go.communifire.com\//, '');
+		url = url.replace(/wefire:\/\/|https:\/\/go.cfire.in\//, '');
 		const regex = /^(room|auth|invite)\?/;
 		if (url.match(regex)) {
 			url = url.replace(regex, '').trim();

@@ -41,7 +41,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="go.communifire.com"
+                    android:host="go.cfire.in"
                     android:scheme="https" />
                 <data
                     android:host="meet.communifire.com"

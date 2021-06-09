@@ -7,7 +7,7 @@ const { post, get, login } = require('../../helpers/data_setup');
 
 const DEEPLINK_METHODS = { AUTH: 'auth', ROOM: 'room' };
 const getDeepLink = (method, server, params) => {
-	const deeplink = `rocketchat://${ method }?host=${ server.replace(/^(http:\/\/|https:\/\/)/, '') }&${params}`;
+	const deeplink = `wefire://${ method }?host=${ server.replace(/^(http:\/\/|https:\/\/)/, '') }&${params}`;
 	console.log(`Deeplinking to: ${ deeplink }`);
 	return deeplink;
 };

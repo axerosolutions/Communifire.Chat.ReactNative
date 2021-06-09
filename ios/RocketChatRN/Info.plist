@@ -30,10 +30,10 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>rocketchat</string>
+			<string>wefire</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>rocketchat</string>
+				<string>wefire</string>
 			</array>
 		</dict>
 	</array>
