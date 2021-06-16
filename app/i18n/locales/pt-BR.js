@@ -332,7 +332,7 @@ export default {
 	Notifications: 'Notificações',
 	Notification_Duration: 'Duração da notificação',
 	Notification_Preferences: 'Preferências de notificação',
-	Not_RC_Server: 'Este não é um servidor Communifire.\n{{contact}}',
+	Not_RC_Server: 'Este não é um servidor Communifire Chat.\n{{contact}}',
 	No_available_agents_to_transfer: 'Nenhum agente disponível para transferência',
 	Offline: 'Offline',
 	Omnichannel: 'Omnichannel',
@@ -651,7 +651,7 @@ export default {
 	Direct_message: 'Mensagem direta',
 	Message_Ignored: 'Mensagem ignorada. Toque para mostrar.',
 	Enter_workspace_URL: 'Digite a URL da sua workspace',
-	Workspace_URL_Example: 'Ex. sua-empresa.rocket.chat',
+	Workspace_URL_Example: 'Ex. chat.sua-empresa.communifire.com',
 	This_room_encryption_has_been_enabled_by__username_: 'A criptografia para essa sala foi habilitada por {{username}}',
 	This_room_encryption_has_been_disabled_by__username_: 'A criptografia para essa sala foi desabilitada por {{username}}'
 };

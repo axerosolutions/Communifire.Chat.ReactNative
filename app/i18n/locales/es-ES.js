@@ -255,7 +255,7 @@ export default {
 	No_Reactions: 'No hay reacciones',
 	No_Read_Receipts: 'No hay confirmaciones de lectura',
 	Not_logged: 'No logueado',
-	Not_RC_Server: 'Esto no es un servidor de Communifire.\n{{contact}}',
+	Not_RC_Server: 'Esto no es un servidor de Communifire Chat.\n{{contact}}',
 	Nothing: 'Nada',
 	Nothing_to_save: 'No hay nada para guardar!',
 	Notify_active_in_this_room: 'Notificar usuarios activos en esta sala',

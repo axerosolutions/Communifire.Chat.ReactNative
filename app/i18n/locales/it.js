@@ -668,7 +668,7 @@ export default {
 	E2E_encryption_change_password_message: 'Assicurati di salvarla in un posto sicuro.',
 	E2E_encryption_change_password_confirmation: 'Si, cambiala',
 	E2E_encryption_reset_title: 'Ripristina la Chiave E2E',
-	E2E_encryption_reset_description: 'Questa opzione rimuoverà la tua chiave E2E corrente e sarai disconnesso. \nAl prossimo login, Rocket.Chat genererà una nuova chiave e ripristinerà l\'accesso a tutte le stanze crittografate con uno o più membri online. \nA causa della natura della crittografia E2E, Rocket.Chat non sarà in grado di ripristinare l\'accesso alle stanze senza membri online.',
+	E2E_encryption_reset_description: 'Questa opzione rimuoverà la tua chiave E2E corrente e sarai disconnesso. \nAl prossimo login, Communifire Chat genererà una nuova chiave e ripristinerà l\'accesso a tutte le stanze crittografate con uno o più membri online. \nA causa della natura della crittografia E2E, Communifire Chat non sarà in grado di ripristinare l\'accesso alle stanze senza membri online.',
 	E2E_encryption_reset_button: 'Ripristina',
 	E2E_encryption_reset_error: 'Si è verificato un errore durante il ripristino della chiave E2E!',
 	E2E_encryption_reset_message: 'Stai per essere disconnesso.',
@@ -704,5 +704,5 @@ export default {
 	Direct_message: 'Messaggio diretto',
 	Message_Ignored: 'Messaggio ignorato. Tocca per visualizzarlo.',
 	Enter_workspace_URL: 'Inserisci la url del workspace',
-	Workspace_URL_Example: 'Es. tua-azienda.rocket.chat'
+	Workspace_URL_Example: 'Es. chat.tua-azienda.communifire.com'
 };

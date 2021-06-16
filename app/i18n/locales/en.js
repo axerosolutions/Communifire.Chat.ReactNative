@@ -710,12 +710,12 @@ export default {
 	Yes_remove_user: 'Yes, remove user!',
 	Direct_message: 'Direct message',
 	Message_Ignored: 'Message ignored. Tap to display it.',
-	YourDomainPlaceHolder: 'yourname.communifire.com',
+	YourDomainPlaceHolder: 'chat.yourname.communifire.com',
 	Login_Form_Domain_Header: 'Login',
-	Login_Form_EnterDomain_Label: 'Enter your Communifire domain',
-	Login_Form_Domain_PlaceHolder: 'yourname.communifire.com',
+	Login_Form_EnterDomain_Label: 'Enter your Communifire chat URL',
+	Login_Form_Domain_PlaceHolder: 'chat.yourname.communifire.com',
 	Enter_workspace_URL: 'Enter workspace URL',
-	Workspace_URL_Example: 'Ex. your-company.rocket.chat',
+	Workspace_URL_Example: 'Ex. chat.your-company.communifire.com',
 	This_room_encryption_has_been_enabled_by__username_: 'This room\'s encryption has been enabled by {{username}}',
 	This_room_encryption_has_been_disabled_by__username_: 'This room\'s encryption has been disabled by {{username}}'
 };
