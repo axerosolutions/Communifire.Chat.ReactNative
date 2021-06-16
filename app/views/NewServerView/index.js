@@ -191,7 +191,7 @@ class NewServerView extends React.Component {
 
 		if (text) {
 			Keyboard.dismiss();
-			const server = this.completeUrl(text);
+			const server = await this.completeUrl(text);
 
 			// Save info - SSL Pinning
 			await UserPreferences.setStringAsync(`${ RocketChat.CERTIFICATE_KEY }-${ server }`, certificate);
@@ -236,7 +236,7 @@ class NewServerView extends React.Component {
 		}
 	}
 
-	completeUrl = (url) => {
+	completeUrl = async(url) => {
 		const parsedUrl = parse(url, true);
 		if (parsedUrl.auth.length) {
 			url = parsedUrl.origin;
@@ -257,7 +257,16 @@ class NewServerView extends React.Component {
 			}
 		}
 
-		return url.replace(/\/+$/, '').replace(/\\/g, '/');
+		url = url.replace(/\/+$/, '').replace(/\\/g, '/');
+
+		if (url.startsWith('https://') && !url.startsWith('https://chat.')) {
+			const altUrl = url.replace('https://', 'https://chat.');
+			if (!(await RocketChat.getServerInfo(url)).success && (await RocketChat.getServerInfo(altUrl)).success) {
+				url = altUrl;
+			}
+		}
+
+		return url;
 	}
 
 	uriToPath = uri => uri.replace('file://', '');

@@ -354,7 +354,7 @@ export default {
 	No_Reactions: 'No Reactions',
 	No_Read_Receipts: 'No Read Receipts',
 	Not_logged: 'Not logged',
-	Not_RC_Server: 'This is not a Communifire server.\n{{contact}}',
+	Not_RC_Server: 'Invalid Communifire Chat URL.\n{{contact}}',
 	Nothing: 'Nothing',
 	Nothing_to_save: 'Nothing to save!',
 	Notify_active_in_this_room: 'Notify active users in this room',
