@@ -308,7 +308,7 @@ class LoginServices extends React.PureComponent {
 			}
 			case 'oauth_custom': {
 				// Instantly hit the OAuth button instead of loading the page.
-				this.onPressCustomOAuth(service);
+				setTimeout(() => this.onPressCustomOAuth(service));
 				onPress = () => this.onPressCustomOAuth(service);
 				break;
 			}
